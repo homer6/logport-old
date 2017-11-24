@@ -4,3 +4,6 @@
 [submodule "third_party/librdkafka"]
 	path = third_party/librdkafka
 	url = https://github.com/edenhill/librdkafka.git
+[submodule "third_party/aws-sdk-cpp"]
+	path = third_party/aws-sdk-cpp
+	url = https://github.com/aws/aws-sdk-cpp.git

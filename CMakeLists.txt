@@ -39,6 +39,7 @@ endif()
 find_package(Boost REQUIRED)
 find_package(RdKafka REQUIRED)
 find_package(CppKafka REQUIRED)
+find_package(AWSSDK REQUIRED)
 
 add_subdirectory(src)
 add_subdirectory(include)

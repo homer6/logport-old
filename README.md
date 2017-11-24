@@ -13,6 +13,7 @@ git submodule update --init --recursive
 ```
 
 
+
 Install librdkafka
 ------------------
 
@@ -26,12 +27,13 @@ libssl-dev (optional, for SSL and SASL SCRAM support)
 libsasl2-dev (optional, for SASL GSSAPI support)
 
 ```
-cd third_party/librdkafka
+pushd third_party/librdkafka
 ./configure
 make -j12
 sudo make install
-cd ../..
+popd
 ```
+
 
 
 Install cppkafka
@@ -42,12 +44,45 @@ Requirements:
 librdkafka
 
 ```
-cd third_party/cppkafka
+pushd third_party/cppkafka
 cmake .
 make -j12
 sudo make install
-cd ../..
+popd
 ```
+
+
+
+Install cmake version 3 (linux)
+-------------------------------
+
+```
+mkdir ~/cmake
+pushd ~/cmake
+wget https://cmake.org/files/v3.10/cmake-3.10.0-Linux-x86_64.sh
+chmod ugo+x cmake-3.10.0-Linux-x86_64.sh
+./cmake-3.10.0-Linux-x86_64.sh
+cd /usr/bin/
+ln -s /root/cmake/cmake-3.10.0-Linux-x86_64/bin/cmake
+popd
+```
+
+
+
+Install aws-sdk-cpp
+-------------------
+
+```
+pushd third_party/aws-sdk-cpp
+mkdir build
+cd build
+cmake ..
+make -j12
+sudo make install
+popd
+```
+
+
 
 
 Install logport

@@ -1,7 +1,8 @@
-set( LOGPORT_EXECUTABLE logport )
+set( LOGPORT_EXECUTABLE ../build/logport )
 
 set(SOURCES
-    main.cpp
+	logport/LogMessage.cc
+    main.cc
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include/logport)
@@ -21,7 +22,7 @@ target_include_directories( ${LOGPORT_EXECUTABLE} PUBLIC ${PROJECT_SOURCE_DIR}/i
 
 
 install( 
-    TARGETS logport
+    TARGETS ${LOGPORT_EXECUTABLE}
     RUNTIME DESTINATION bin
     COMPONENT dev
 )
